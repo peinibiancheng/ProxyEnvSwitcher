@@ -55,14 +55,88 @@ Minimal resource usage with quick response times, ensuring it doesn't slow down 
 3. 运行安装程序并按照屏幕提示操作
 
 #### Build from Source / 从源码构建
+
+**Prerequisites / 系统要求**
+
+1. **Node.js**: Version 18.0 or higher / 版本 18.0 或更高版本
+2. **pnpm**: Recommended package manager / 推荐的包管理器
+   ```bash
+   npm install -g pnpm
+   ```
+3. **Rust**: Version 1.70.0 or higher with rustup / 版本 1.70.0 或更高版本，包含 rustup
+   ```bash
+   # Install Rust / 安装 Rust
+   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+   
+   # On Windows, use the installer from rustup.rs
+   # 在 Windows 上，请使用 rustup.rs 的安装程序
+   ```
+
+**Development Setup / 开发环境设置**
+
 ```bash
 # Clone the repository / 克隆仓库
 git clone https://github.com/peinibiancheng/ProxyEnvSwitcher.git
 cd ProxyEnvSwitcher
 
-# Build instructions will be added as the project develops
-# 构建说明将在项目开发过程中添加
+# Install dependencies / 安装依赖
+pnpm install
+
+# Start development server / 启动开发服务器
+pnpm tauri dev
 ```
+
+**Available Scripts / 可用脚本**
+
+```bash
+# Development / 开发
+pnpm tauri dev          # Start the app in development mode / 以开发模式启动应用
+pnpm dev                # Start only the frontend dev server / 仅启动前端开发服务器
+
+# Building / 构建
+pnpm tauri build        # Build the application for production / 构建生产版本应用
+pnpm build              # Build only the frontend / 仅构建前端
+
+# Code Quality / 代码质量
+pnpm lint               # Run ESLint / 运行 ESLint
+pnpm preview            # Preview the built frontend / 预览构建的前端
+
+# Tauri CLI / Tauri 命令行
+pnpm tauri <command>    # Run any Tauri CLI command / 运行任何 Tauri CLI 命令
+```
+
+**Development Workflow / 开发工作流**
+
+1. **Start Development / 启动开发**:
+   ```bash
+   pnpm tauri dev
+   ```
+   This will start both the frontend development server and the Tauri backend, opening the application in a new window.
+   
+   这将启动前端开发服务器和 Tauri 后端，并在新窗口中打开应用程序。
+
+2. **Hot Reload / 热重载**:
+   - Frontend changes automatically reload / 前端更改自动重载
+   - Rust backend changes require manual restart / Rust 后端更改需要手动重启
+
+3. **Building for Production / 构建生产版本**:
+   ```bash
+   pnpm tauri build
+   ```
+   The built application will be in `src-tauri/target/release/bundle/` directory.
+   
+   构建的应用程序将在 `src-tauri/target/release/bundle/` 目录中。
+
+**Troubleshooting / 故障排除**
+
+- **Common Issues / 常见问题**:
+  - If you encounter permission errors on Windows, run as Administrator / 如果在 Windows 上遇到权限错误，请以管理员身份运行
+  - Make sure all dependencies are installed with `pnpm install` / 确保使用 `pnpm install` 安装所有依赖
+  - For Rust-related errors, ensure your Rust toolchain is up to date / 对于 Rust 相关错误，请确保您的 Rust 工具链是最新的
+
+- **Getting Help / 获取帮助**:
+  - Check the [Issues](https://github.com/peinibiancheng/ProxyEnvSwitcher/issues) page
+  - Start a [Discussion](https://github.com/peinibiancheng/ProxyEnvSwitcher/discussions)
 
 ### macOS (Coming Soon) / macOS（即将推出）
 Mac support is currently under development and will be available in a future release.

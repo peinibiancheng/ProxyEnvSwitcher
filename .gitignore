@@ -96,3 +96,4 @@ lerna-debug.log*
 # Tauri built apps
 src-tauri/target/release/bundle/
 src-tauri/target/debug/bundle/
+target/
