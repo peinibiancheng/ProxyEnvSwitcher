@@ -60,9 +60,8 @@ Minimal resource usage with quick response times, ensuring it doesn't slow down 
 git clone https://github.com/peinibiancheng/ProxyEnvSwitcher.git
 cd ProxyEnvSwitcher
 
-# Build the project / 构建项目
-# (Build instructions will be added as the project develops)
-# (构建说明将在项目开发过程中添加)
+# Build instructions will be added as the project develops
+# 构建说明将在项目开发过程中添加
 ```
 
 ### macOS (Coming Soon) / macOS（即将推出）
@@ -150,7 +149,6 @@ Configure rules to automatically switch proxies based on:
 
 **Windows**:
 - Windows 10 or later / Windows 10 或更高版本
-- .NET Framework 4.7.2 or later (if applicable) / .NET Framework 4.7.2 或更高版本（如适用）
 - Administrator privileges for system-wide proxy changes / 需要管理员权限以更改系统级代理
 
 **macOS** (Coming Soon / 即将推出):
